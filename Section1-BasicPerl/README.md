@@ -26,4 +26,32 @@ A:: Well, glad you asked!. This is how we check each line to see if there is a m
 You can read the expression `if($cl =~ / help /)` as, check if the line contained in `$cl` has a value that can be captured by the regular expression `/ help /`. You can adjust this regular expression like so `/help/`, to not only match the word `help` but words such as `helpless`, `helping`, etc. as well, that contain the letter `help` in order.
 
 ---
+**Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
+Q4:: What's the purpose of `$|=1` at `ln4`?
+
+A:: Perl buffers the output on `Unix`-based systems. To disable output-buffering we put `$|=1` at the start of our perl script.
+
+**Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
+Q5:: What's the purpose of `'>'.$outputFile` in statement `open(OUTPUT,'>'.$outputFile) or die("$outputFile couldn't be created!\n");`?
+
+A:: `'>'.$outputFile` is how we concatenate strings in Perl. Like in `Java`, we use the `+` operator to concatenate two strings, in `Perl`, we use the `.` operator to concatenate strings, here them strings being the path to output file `$outputFile` and `>`. The purpose of doing this concatenation is in with regards with how we create files in Perl. To create a file in perl, one must append `'>'` to the beginning of the path to the file. We could've also added `>` to the path like so
+`my $outputFile = '>./Resources/output.txt';`, but that would've looked even more ambiguous, thus we went with the convention applied here!
+
+**Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
+Q6:: What's up with the new regExp in this expression `$currLine =~ /\begg\b/`?
+
+A:: Well, `\b` defines the bounday for our capture-string, with `\b` we are telling the regExp engine how the boundary for the capture group is to be defined, surrounded by `\b` means that out string can be surrounded by a space, hyphen, full-stop, etc, but not by other letters.
+
+**Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
+Q6:: What's up with this statement `$currLine =~ s/hen/DOG/ig;`>
+
+A:: This statement looks for lines with values that can be captured by `/hen/` and replaces them with `/DOG/` the purpose of `s/` before the first forward-slash is to say that we want to replace values from first capture group with `DOG`, the `i`, and `g` are flags, with `i` standing for `case-insensitive` (thus `hen` ,`HeN`, `HEn`, `HEN`, etc. will all open for capture) and `g` standing for `global` (meaning, replace all occurrences of `hen` with `DOG`, and not just the first one.) 
+
+**Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
+Q7:: What's the meaning of this new `print` statement `print OUTPUT $currLine;`
+
+A:: I get it! It does look like a `syscall` but it's just saying "print to the file held by handler `OUTPUT` the string stored in variable `$currLine`".
+
+-----
+
 
