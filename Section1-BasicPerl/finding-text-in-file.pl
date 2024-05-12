@@ -5,7 +5,7 @@ $|=1;
 #printing all lines in the file
 sub main {
     my $fileName = './Resources/my-man-jeeevs.txt';
-    open(INPUT,$fileName) or die("$fileName not found");
+    open(INPUT,$fileName) or die("$fileName not found"); # the file handle 'INPUT' is named so by convention, it'll allow us to handle the file
         while(my $currLine = <INPUT> ){
             print("$currLine");
         }
@@ -84,4 +84,48 @@ helpLines_inOrder();
 # agreement and help preserve free future access to Project Gutenberg™
 # Archive Foundation and how your efforts and donations can help, see
 # Archive Foundation, how to help produce our new eBooks, and how to
+
+# trying out die, "die" crashes the program!
+sub justDie {
+    my $fileName = '/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md';
+    open(INPUT,$fileName);
+    print("$fileName opened!\n");
+    die; # we can write functions without round brackets, "die" crashes the program!
+    print("I'll not be executed!\n");
+    close(INPUT);
+}
+#justDie;
+# OUTPUT
+# /Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md opened!
+# Died at /Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/Section1-BasicPerl/finding-text-in-file.pl line 93.
+
+# now what if we don't want to let user know what line number the sub-routine died at, we can use
+sub justDie_2 {
+    my $fileName = '/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md';
+    open(INPUT,$fileName);
+    print("$fileName opened!\n");
+    die("$0 is dead!\n"); # we can write functions without round brackets
+    print("I'll not be executed!\n");
+    close(INPUT);
+}
+justDie_2;
+# output:
+#/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md opened!
+#I am dead! at /Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/Section1-BasicPerl/finding-text-in-file.pl line 107.
+
+# we can prevent line line number from showing up in the message by adding `\n` at the end of messaeg passed to `die`, like so
+# die("I am dead!\n");
+
+#OUTPUT:
+#/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md opened!
+#I am dead!
+
+#if we use '$0' in the message passed to `die`
+#OUTPUT
+#/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md opened!
+#w/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/Section1-BasicPerl/finding-text-in-file.pl is dead!
+
+
+
+
 
