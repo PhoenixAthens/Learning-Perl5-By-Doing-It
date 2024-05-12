@@ -1,5 +1,5 @@
 # Understanding the Nitty-Gritty Details!
-> I've already mentioned a lot of this in the comments section but still!
+> I've already mentioned a lot of this in the code-comments but still!
 
 
 Q1:: How does this statement work in Perl? `open(INPUT,$fileName) or die("$fileName not found");`
