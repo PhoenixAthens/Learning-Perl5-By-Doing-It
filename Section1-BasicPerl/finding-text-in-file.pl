@@ -17,7 +17,7 @@ sub main {
 sub helpLines {
     my $fileName = './Resources/my-man-jeeevs.txt';
     open(INPUT,$fileName) or die("$fileName not found!");
-    while(my $cl = <INPUT>){
+    while(my $cl = <INPUT>){ # <INPUT> is a file-input operator that reads a line at a time
         if ($cl =~ / help /) {
             print($cl);
         }
