@@ -4,7 +4,7 @@ use warnings FATAL => 'all';
 $|=1;
 #printing all lines in the file
 sub main {
-    my $fileName = './Resources/my-man-jeeevs.txt';
+    my $fileName = '../Resources/my-man-jeeevs.txt';
     open(INPUT,$fileName) or die("$fileName not found"); # the file handle 'INPUT' is named so by convention, it'll allow us to handle the file
         while(my $currLine = <INPUT> ){
             print("$currLine");
@@ -15,7 +15,7 @@ sub main {
 
 #printing lines that contain the word 'help'
 sub helpLines {
-    my $fileName = './Resources/my-man-jeeevs.txt';
+    my $fileName = '../Resources/my-man-jeeevs.txt';
     open(INPUT,$fileName) or die("$fileName not found!");
     while(my $cl = <INPUT>){ # <INPUT> is a file-input operator that reads a line at a time
         if ($cl =~ / help /) {
@@ -42,9 +42,9 @@ sub helpLines {
 #     agreement and help preserve free future access to Project Gutenberg™
 #     Archive Foundation, how to help produce our new eBooks, and how to
 
-#printing lines that contain the letter help in order
+#printing lines that contain the letters 'h' 'e' 'l' 'p' in order
 sub helpLines_inOrder {
-    my $fileName = './Resources/my-man-jeeevs.txt';
+    my $fileName = '../Resources/my-man-jeeevs.txt';
     open(INPUT,$fileName) or die("$fileName not found!");
     while(my $currLine = <INPUT>){
         if ($currLine =~ /help/) {
@@ -99,12 +99,12 @@ sub justDie {
 # /Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md opened!
 # Died at /Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/Section1-BasicPerl/finding-text-in-file.pl line 93.
 
-# now what if we don't want to let user know what line number the sub-routine died at, we can use
+# now what if we don't want to let users know what line number the sub-routine died at, we can use
 sub justDie_2 {
     my $fileName = '/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.md';
     open(INPUT,$fileName);
     print("$fileName opened!\n");
-    die("$0 is dead!\n"); # we can write functions without round brackets
+    die("$0 is dead!\n"); # we can write functions without round brackets as well, like so (refer ln129)
     print("I'll not be executed!\n");
     close(INPUT);
 }
@@ -126,6 +126,11 @@ justDie_2;
 #w/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/Section1-BasicPerl/finding-text-in-file.pl is dead!
 
 
-
-
-
+sub justDie_3 {
+    my $filename = "/Users/anmolkhanna/Downloads/Programming_Savings_2024/Perl/README.m";
+    open INPUT,$filename;
+    print "$filename has opened!" ;
+    die "Couldn't open $0\n";
+}
+justDie_3();
+#Couldn't open finding-text-in-file.pl

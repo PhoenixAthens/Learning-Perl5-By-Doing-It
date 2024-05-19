@@ -4,6 +4,7 @@
     <option name="perlInterpreter" value="Local, System: Perl 5.38.2" />
   </component>
   <component name="Perl5XSubsState">
+    <option name="isActual" value="false" />
     <option name="myFilesMap">
       <map>
         <entry key="$USER_HOME$/Library/Caches/activestate/bdc05e46/lib/perl5/5.36.3/darwin-2level/auto/B/B.bundle" value="1715459692629" />

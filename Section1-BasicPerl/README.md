@@ -23,7 +23,7 @@ A:: Well, I did some research (AMZN Q 😅), so it goes something like this:<br>
 Q3:: How does this expression `$cl =~ / help /` in the while-loop work?
 
 A:: Well, glad you asked!. This is how we check each line to see if there is a match for word `help` in it. The `/ help /` is a very basic regular-expression. 
-You can read the expression `if($cl =~ / help /)` as, check if the line contained in `$cl` has a value that can be captured by the regular expression `/ help /`. You can adjust this regular expression like so `/help/`, to not only match the word `help` but words such as `helpless`, `helping`, etc. as well, that contain the letter `help` in order.
+You can read the expression `if($cl =~ / help /)` as, check if the line contained in `$cl` has a value that can be captured by the regular expression `/ help /`. You can adjust this regular expression like so `/help/`, to not only match the word `help` but words such as `helpless`, `helping`, etc. as well, that contain the letters `'h' 'e' 'l' 'p'` in order.
 
 ---
 **Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
@@ -40,7 +40,7 @@ A:: `'>'.$outputFile` is how we concatenate strings in Perl. Like in `Java`, we 
 **Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
 Q6:: What's up with the new regExp in this expression `$currLine =~ /\begg\b/`?
 
-A:: Well, `\b` defines the bounday for our capture-string, with `\b` we are telling the regExp engine how the boundary for the capture group is to be defined, surrounded by `\b` means that out string can be surrounded by a space, hyphen, full-stop, etc, but not by other letters.
+A:: Well, `\b` defines the bounday for our capture-string, with `\b` we are telling the regExp engine how the boundary for the capture group is to be defined, surrounded by `\b` means that our string can be surrounded by a space, hyphen, full-stop, etc, but not by other letters.
 
 **Context:[`writing-to-output-and-replacing-text.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/writing-to-output-and-replacing-text.pl)**<br>
 Q6:: What's up with this statement `$currLine =~ s/hen/DOG/ig;`>

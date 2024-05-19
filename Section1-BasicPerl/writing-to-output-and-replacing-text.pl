@@ -3,8 +3,8 @@ use strict;
 use warnings FATAL => 'all';
 $|=1;
 sub main {
-    my $inputFile = './Resources/my-man-jeeevs.txt';
-    my $outputFile = './Resources/output.txt';
+    my $inputFile = '../Resources/my-man-jeeevs.txt';
+    my $outputFile = '../Resources/output.txt';
 
     open(INPUT,$inputFile) or die("$inputFile not found!\n");
     open(OUTPUT,'>'.$outputFile) or die("$outputFile couldn't be created!\n");
