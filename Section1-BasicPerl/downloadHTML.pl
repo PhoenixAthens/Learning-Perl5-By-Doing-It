@@ -14,9 +14,9 @@ my $request = HTTP::Request->new('GET', 'https://caveofpython.com');
 my $response = $ua->request($request);
 
 unless($response ->is_success()){
-    die $response->status_line();
+    die $response -> status_line();
 }
-my $content = $response->decoded_content();
+my $content = $response -> decoded_content();
 print($content);
 print("completed");
 
