@@ -10,6 +10,7 @@ A: It’s utilizing **short-circuit logic**! If the `open()` function is able to
 
 However, if the `open` function is unable to open the file for whatever reason, the expression on the LHS of `or` returns `FALSE`, and the expression isn’t short-circuited. This results in the `die` subroutine being executed, which terminates our program before any harm can be done!
 
+---
 **Context:[`finding-text-in-file.pl`](https://github.com/PhoenixAthens/Learning-Perl5-By-Doing-It/blob/master/Section1-BasicPerl/finding-text-in-file.pl)**<br>
 Q2: What's the meaning of `<INPUT>` in the while-loop? How does it work?
 
@@ -164,9 +165,9 @@ This line retrieves the decoded content (HTML, JSON, etc.) of the server's respo
 print($content);
 print("completed");
 ```
-These lines print the downloaded content to the console, followed by the string "completed".
+These lines print the downloaded content to the console, followed by the string "completed."
 
-In summary, this Perl script downloads the HTML content of the "https://caveofpython.com" website using the LWP module, disabling SSL certificate and hostname verification for simplicity. It then prints the downloaded content to the console, along with the string "completed".
+In summary, this Perl script downloads the HTML content of the "https://caveofpython.com" website using the LWP module, disabling SSL certificate and hostname verification for simplicity. It then prints the downloaded content to the console, along with the string "completed."
 
 ---
 
