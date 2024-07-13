@@ -31,7 +31,8 @@ sub moreRegexp{
         if ($line =~ /(I..a.)(...)/) {
             print("printing whole thing: '$0', First match: '$1', Second match: '$2'\n");
         }
-        # $0 refers to the name of the perl script!
+        # $0 refers to the name of the perl script! Unlike java, where capture group 0 corresponds to the
+        # entire string
     }
     close(INPUT)
 }
