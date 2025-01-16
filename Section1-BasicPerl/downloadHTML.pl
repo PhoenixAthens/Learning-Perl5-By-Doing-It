@@ -7,7 +7,7 @@ use IO::Socket::SSL;
 my $ua = LWP::UserAgent->new(cookie_jar=>{});
 $ua->ssl_opts(
     'SSL_verify_mode' => $IO::Socket::SSL::SSL_VERIFY_NONE,
-    'verify_hostname'=>0
+    'verify_hostname' => 0
 );
 my $request = HTTP::Request->new('GET', 'https://caveofpython.com');
 

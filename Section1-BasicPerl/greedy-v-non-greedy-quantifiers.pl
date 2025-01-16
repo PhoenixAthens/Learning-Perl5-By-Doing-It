@@ -11,7 +11,6 @@ sub main {
         }
     }
     close(INPUT)
-
 }
 
 main();
